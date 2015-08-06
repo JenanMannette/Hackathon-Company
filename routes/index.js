@@ -11,10 +11,15 @@ router.get('/', function(req, res, next) {
 router.get('/companySearch',function(req,res) {
 
   console.log(req.query.companyName);
-  axios.get('http://api.glassdoor.com/api/api.htm?t.p=40412&t.k=fvkSeCJKgSQ&userip=0.0.0.0&useragent=&format=json&v=1&l=boulder&q='+ req.query.companyName +'&action=employers')
+  axios.get('http://api.glassdoor.com/api/api.htm?t.p='+process.env.PARTNER_ID+'&t.k='+process.env.KEY+'&userip=0.0.0.0&useragent=&format=json&v=1&&action=employers', {
+    params: {
+      'q' : req.query.companyName,
+      'l' :'boulder'
+    }
+  })
     .then(function (response) {
-      console.log(response);
-      res.render('companySearch', response.employers)
+      console.log(response.data.response.employers);
+      res.render('companySearch', {companies:response.data.response.employers})
     })
     .catch(function (response) {
       console.log(response);
