@@ -121,5 +121,4 @@ app.post('/local-login', passport.authenticate('local', {
   failureRedirect: '/login'
 }));
 
-
 module.exports = app;
