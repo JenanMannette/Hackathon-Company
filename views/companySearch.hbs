@@ -3,5 +3,10 @@
 <div id="searchTerm">{{search}}</div>
 <div></div>
 {{#each companies}}
-    <h2>{{this.name}} <a id="{{index}}"href="">Add to List </a></h2>
+    <h2>{{this.name}} <a id="{{index}}"href="/companyAdd/{{search}}/{{index}}">Add to List </a></h2>
 {{/each}}
+
+
+<!--<script src="/javascripts/orbit.js"></script>-->
+<!--<script src="/javascripts/axios.js"></script>-->
+<!--<script src="/javascripts/client.js"></script>-->

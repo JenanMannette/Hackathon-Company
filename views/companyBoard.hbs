@@ -1,0 +1,16 @@
+<h1>Company Board</h1>
+
+{{#each companies}}
+    <div>
+
+    <h2>
+        <a href="http://{{this.companies.website}}">{{this.companies.name}}</a>
+    </h2>
+        <h4>{{this.companies.ceo.title}}</h4>
+        <h4>{{this.companies.ceo.name}}</h4>
+
+        <img src="{{this.companies.squareLogo}}" alt=""/>
+    </div>
+    <hr/>
+
+{{/each}}
