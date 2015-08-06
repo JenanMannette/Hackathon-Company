@@ -1,5 +1,7 @@
 <h1>company search</h1>
-
+<div id="userid">{{user.id}}</div>
+<div id="searchTerm">{{search}}</div>
+<div></div>
 {{#each companies}}
-    <h2>{{this.name}} <a href="">Add to List</a></h2>
+    <h2>{{this.name}} <a id="{{index}}"href="">Add to List </a></h2>
 {{/each}}

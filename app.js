@@ -63,6 +63,7 @@ passport.deserializeUser(function (user, done) {
 });
 
 app.use(function (req, res, next) {
+  //console.log(req.user)
   res.locals.user = req.user;
   //res.locals.authenticated = !req.user.anonymous;
   next();

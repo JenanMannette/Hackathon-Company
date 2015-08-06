@@ -19,7 +19,13 @@ router.get('/companySearch',function(req,res) {
   })
     .then(function (response) {
       console.log(response.data.response.employers);
-      res.render('companySearch', {companies:response.data.response.employers})
+      var data = response.data.response.employers;
+      data.forEach(function(e,i){
+        e.index = i
+        e.search = req.query.companyName
+      });
+      //console.log(response.data.response.employers);
+      res.render('companySearch', {companies:data,search:req.query.companyName})
     })
     .catch(function (response) {
       console.log(response);
