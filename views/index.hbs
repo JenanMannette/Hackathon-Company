@@ -1,18 +1,18 @@
-<h1>WOODDOOR</h1>
+<h1>WOOD DOOR</h1>
 
-{{#if user}}
+  {{#if user}}
 
-<p>Welcome {{user.email}} : <a href="/companyBoard">Your List</a></p>
-<a href="/logout">Logout</a>
-<p>
-  <form action="/companySearch" method="get">
-      SEARCH FOR COMPANIES: <input type="text" name="companyName" placeholder="Company Name">
-    <input type="submit" value="Search">
-  </form>
-</p>
+  <p>Welcome {{user.email}} : <a href="/companyBoard">Your List</a></p>
+  <a href="/logout" id="logout">Logout</a>
+  <p>
+    <form action="/companySearch" method="get">
+        SEARCH FOR COMPANIES: <input type="text" name="companyName" placeholder="Company Name">
+      <input type="submit" value="Search">
+    </form>
+  </p>
 
-{{else}}
-<a href="/register">Register</a>
-<a href="/login">Login</a>
+  {{else}}
+  <a href="/register">Register</a>
+  <a href="/login">Login</a>
 
-{{/if}}
+  {{/if}}
