@@ -1,13 +1,19 @@
-<h1>{{title}}</h1>
-<p>Welcome {{user.email}}</p>
+<h1>WOODDOOR</h1>
 
-<a href="/register">Register</a>
-|
-<a href="/login">Login</a>
-|
+{{#if user}}
+
+<p>Welcome {{user.email}} : <a href="/companyBoard">Your List</a></p>
 <a href="/logout">Logout</a>
 
-<form action="/companySearch" method="get">
-  <input type="text" name="companyName" value="Company Name">
-  <input type="submit" value="Search">
-</form>
+{{else}}
+<a href="/register">Register</a>
+<a href="/login">Login</a>
+
+{{/if}}
+
+<p>
+  <form action="/companySearch" method="get">
+      SEARCH FOR COMPANIES: <input type="text" name="companyName" placeholder="Company Name">
+    <input type="submit" value="Search">
+  </form>
+</p>
